@@ -1,0 +1,23 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: 241DSWSpringMSDemo01Gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: persona
+          uri: 'http://localhost:8090'
+          predicates:
+            - Path=/api/persona/**
+        - id: usuario
+          uri: 'http://localhost:8100'
+          predicates:
+            - Path=/api/usuario/**
+eureka:
+  client:
+    register-with-eureka: false

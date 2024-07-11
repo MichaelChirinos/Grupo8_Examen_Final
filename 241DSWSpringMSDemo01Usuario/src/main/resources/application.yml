@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 241DSWSpringMSDemo01Usuario
+  config:
+    import: optional:configserver:http://localhost:8888
